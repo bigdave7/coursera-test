@@ -11,12 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9d50fd2135.js" crossorigin="anonymous"></script>
     <title>David Chu's China Bistro</title>
 </head>
 <body>
     <header>
-        <nav id="header-nav" class="navbar navbar-default">
-            <div class="container">
+        <nav id="header-nav" class="navbar navbar-expand-md navbar-light">
+            <div class="container-fluid">
                 <div class="navbar-header">
                     <a href="site.html" class="float-start d-none d-md-block">
                         <div id="logo-img" alt="Logo Image"></div>
@@ -29,15 +30,38 @@
                         </p>
                     </div>
                     
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler ms-auto d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                 </div>
 
+                <div id="navbarNav" class="collapse navbar-collapse">
+                    <ul id="nav-list" class="nav navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fa-solid fa-utensils"></i><br class="d-none d-sm-block"> Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fa-solid fa-circle-info"></i><br class="d-none d-sm-block"> About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fa-solid fa-crown"></i><br class="d-none d-sm-block"> Awards</a>
+                        </li>
+                        <li id="phone" class="d-none d-sm-block">
+                            <a href="tel:410-602-5008">
+                                <span>410-602-5008</span></a><div>* We Deliver</div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
+
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
     
 </body>
 </html>

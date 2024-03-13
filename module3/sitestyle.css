@@ -48,3 +48,45 @@ body {
 .navbar-brand p span {
     vertical-align: middle;
 }
+
+#nav-list {
+    margin-top: 0;
+}
+
+#nav-list a {
+    color: #951C49;
+    font-size: 1em;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nav-list a:hover {
+    background: #E7E7E7;
+}
+
+#nav-list a span, i {
+    font-size: 1.6em;
+}
+
+#phone {
+    margin-top: 0;
+}
+
+#phone a {
+    text-align: right;
+    padding-bottom: 0;
+}
+
+#phone div {
+    color: #557C3E;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.nav-item {
+    margin-right: 12px;
+    padding-right: 12px;
+}
