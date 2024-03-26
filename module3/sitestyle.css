@@ -53,6 +53,7 @@ body {
 
 #nav-list {
     margin-top: 0;
+    width: 400px;
 }
 
 #nav-list a {
@@ -141,10 +142,14 @@ body {
     .navbar-brand p img {
         height: 20px;
     }
+    #nav-list {
+        width: 100%;
+    }
     #nav-list a {
-        font-size: 1.2em;
+        font-size: 1.22em;
         flex-direction: row;
         justify-content: center;
+        align-items: flex-end;
         margin-top: 8px;
         margin-bottom: 8px;
     }
