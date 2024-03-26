@@ -3,6 +3,7 @@ body {
     color: #fff;
     background-color: #61122f;
     font-family: "Oxygen", sans-serif;
+    font-weight: 600;
 }
 
 #header-nav {
@@ -78,7 +79,7 @@ body {
 }
 
 #phone {
-    margin-top: 0;
+    margin-top: 5px;
 }
 
 #phone a {
@@ -103,6 +104,7 @@ body {
 
 .navbar-header button.navbar-toggler {
     border: 1px solid #61122F;
+    margin-top: 22px;
 }
 
 @media (min-width: 1200px) {
@@ -138,6 +140,17 @@ body {
     }
     .navbar-brand p img {
         height: 20px;
+    }
+    #nav-list a {
+        font-size: 1.2em;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+    #nav-list a i {
+        font-size: 1em;
+        margin-right: 8px;
     }
 }
 
