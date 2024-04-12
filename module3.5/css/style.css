@@ -1,1 +1,115 @@
+#header-nav {
+    background-color: #db7777;
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-brand {
+    padding: 25px 0 25px 25px;
+    display: inline-block;
+}
+
+.navbar-brand a {
+    font-family: "Lilita One", sans-serif;
+    color:cornsilk;
+    font-size: 2em;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #222;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: .75;
+}
+
+#nav-list {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 0.4rem outset pink;
+    border-radius: 8px;
+}
+
+#nav-list a {
+    font-family: "Lilita One", sans-serif;
+    color:cornsilk;
+    font-size: 1.3em;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+#nav-list a:hover {
+    background: #dddddd;
+}
+
+#nav-list a i {
+    margin-right: 8px;
+}
+
+.nav-item {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-bottom: 1.6px solid pink;
+}
+
+.nav-item:last-child {
+    border-bottom: 0;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+.navbar-header button.navbar-toggler {
+    border: 0.2rem outset white;
+    margin-top: 25px;
+}
+
+#page-title h1 {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 35px 15px 15px 15px; 
+}
+
+.row {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.item {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    border: 2px outset #e7e7e7;
+    border-radius: 12px;
+    padding: 20px;
+    margin-left: 25px;
+    margin-right: auto;
+}
+
+.item-title {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.item-description {
+    font-family: "Averia Serif Libre", serif;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.item-description a {
+    margin-right: 30px;
+}
 
