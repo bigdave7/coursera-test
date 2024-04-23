@@ -9,7 +9,7 @@ $(function () {
 
 (function (global) {
     var dc = {};
-    var homeHtml = "snippets/home-snippet.html";
+    var homeHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/home-snippet.html";
 
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
