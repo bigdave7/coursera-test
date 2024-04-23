@@ -10,6 +10,9 @@ $(function () {
 (function (global) {
     var dc = {};
     var homeHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/home-snippet.html";
+    var allCategoriesUrl = "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
+    var categoriesTitleHtml = "";
+    var categoryHtml = "";
 
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
