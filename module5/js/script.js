@@ -34,6 +34,18 @@ $(function () {
         return string;
     }
 
+    var switchMenuToActive = function () {
+        var classes = document.querySelector("#navHomeButton").className;
+        classes = classes.replace(new RegExp("nav-hovered", "g"), "");
+        document.querySelector("#navHomeButton").className = classes;
+
+        classes = document.querySelector("#navMenuButton").className;
+        if (classes.indexOf("nav-hovered") == -1) {
+            classes += " nav-hovered";
+            document.querySelector("#navMenuButton").className = classes;
+        }
+    }
+
     document.addEventListener("DOMContentLoaded", function (event) {
         showLoading("#main-content");
         $.get(homeHtml, function (responseText) {
@@ -54,6 +66,8 @@ $(function () {
     function buildAndShowCategoriesHTML (categories) {
         $.get(categoriesTitleHtml, function (categoriesTitleHtml) {
             $.get(categoryHtml, function (categoryHtml) {
+                switchMenuToActive();
+
                 var categoriesViewHtml = buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml);
                 insertHtml("#main-content", categoriesViewHtml);
             });
@@ -79,6 +93,8 @@ $(function () {
     function buildAndShowMenuItemsHTML (categoryMenuItems) {
         $.get(menuItemsTitleHtml, function (menuItemsTitleHtml) {
             $.get(menuItemHtml, function(menuItemHtml) {
+                switchMenuToActive();
+                
                 var menuItemsViewHtml = buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml);
                 insertHtml("#main-content", menuItemsViewHtml);
             });
