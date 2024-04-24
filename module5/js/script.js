@@ -10,9 +10,12 @@ $(function () {
 (function (global) {
     var dc = {};
     var homeHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/home-snippet.html";
-    var allCategoriesUrl = "";
+    var allCategoriesUrl = "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
     var categoriesTitleHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/categories-title-snippet.html";
     var categoryHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/category-snippet.html";
+    var menuItemsUrl = "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/";
+    var menuItemsTitleHtml = "";
+    var menuItemHtml = "";
 
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
@@ -35,7 +38,7 @@ $(function () {
         showLoading("#main-content");
         $.get(homeHtml, function (responseText) {
             document.querySelector("#main-content").innerHTML = responseText;
-        }, "html");
+        });
     });
 
     dc.loadMenuCategories = function () {
@@ -48,8 +51,8 @@ $(function () {
             $.get(categoryHtml, function (categoryHtml) {
                 var categoriesViewHtml = buildAndShowCategoriesHTML(categories, categoriesTitleHtml, categoryHtml);
                 insertHtml("#main-content", categoriesViewHtml);
-            }, "html");
-        }, "html");
+            });
+        });
     }
 
     function buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml) {
