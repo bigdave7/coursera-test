@@ -47,7 +47,7 @@ $(function () {
     }
 
     dc.loadMenuItems = function (categoryShort) {
-        showLoading("main-content");
+        showLoading("#main-content");
         $.get(menuItemsUrl + categoryShort + ".json", buildAndShowMenuItemsHTML);
     }
 
@@ -80,7 +80,7 @@ $(function () {
         $.get(menuItemsTitleHtml, function (menuItemsTitleHtml) {
             $.get(menuItemHtml, function(menuItemHtml) {
                 var menuItemsViewHtml = buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml);
-                insertHtml("main-content", menuItemsViewHtml);
+                insertHtml("#main-content", menuItemsViewHtml);
             });
         });
     }
