@@ -43,7 +43,7 @@ $(function () {
 
     dc.loadMenuCategories = function () {
         showLoading("#main-content");
-        $.get(allCategoriesUrl, buildAndShowCategoriesHTML, "json");
+        $.get(allCategoriesUrl, buildAndShowCategoriesHTML);
     }
 
     dc.loadMenuItems = function (categoryShort) {
@@ -74,6 +74,59 @@ $(function () {
         }
         finalHtml += "</section>";
         return finalHtml;
+    }
+
+    function buildAndShowMenuItemsHTML (categoryMenuItems) {
+        $.get(menuItemsTitleHtml, function (menuItemsTitleHtml) {
+            $.get(menuItemHtml, function(menuItemHtml) {
+                var menuItemsViewHtml = buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml);
+                insertHtml("main-content", menuItemsViewHtml);
+            });
+        });
+    }
+
+    function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml) {
+        menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "name", categoryMenuItems.category.name);
+        menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "special_instructions", categoryMenuItems.category.special_instructions);
+
+        var finalHtml = menuItemsTitleHtml;
+        finalHtml += "<section class='row'>";
+
+        var menuItems = categoryMenuItems.menu_items;
+        var catShortName = categoryMenuItems.category.short_name;
+        for (var i = 0; i < menuItems.length; i++) {
+            var html = menuItemHtml;
+            html = insertProperty(html, "short_name", menuItems[i].short_name);
+            html = insertProperty(html, "catShortName", catShortName);
+            html = insertItemPrice(html, "price_small", menuItems[i].price_small);
+            html = insertItemPortionName(html, "small_portion_name", menuItems[i].small_portion_name);
+            html = insertItemPrice(html, "price_large", menuItems[i].price_large);
+            html = insertItemPortionName(html, "large_portion_name", menuItems[i].large_portion_name);
+            html = insertProperty(html, "name", menuItems[i].name);
+            html = insertProperty(html, "description", menuItems[i].description);
+            
+            finalHtml += html;
+        }
+        finalHtml += "</section>";
+        return finalHtml;
+    }
+    
+    function insertItemPrice(html, pricePropName, priceValue) {
+        if (!priceValue) {
+            return insertProperty(html, pricePropName, "");
+        }
+        priceValue = "$" + priceValue.toFixed(2);
+        html = insertProperty(html, pricePropName, priceValue);
+        return html;
+    }
+
+    function insertItemPortionName(html, portionPropName, portionValue) {
+        if (!portionValue) {
+            return insertProperty(html, portionPropName, "");
+        }
+        portionValue = "(" + portionValue + ")";
+        html = insertProperty(html, portionPropName, portionValue);
+        return html;
     }
 
     global.$dc = dc;
