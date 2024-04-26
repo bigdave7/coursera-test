@@ -9,13 +9,13 @@ $(function () {
 
 (function (global) {
     var dc = {};
-    var homeHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/home-snippet.html";
+    var homeHtml = "https://bigdave7.github.io/coursera-test/module5.5/snippets/home-snippet.html";
     var allCategoriesUrl = "https://coursera-jhu-default-rtdb.firebaseio.com/categories.json";
-    var categoriesTitleHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/categories-title-snippet.html";
-    var categoryHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/category-snippet.html";
+    var categoriesTitleHtml = "https://bigdave7.github.io/coursera-test/module5.5/snippets/categories-title-snippet.html";
+    var categoryHtml = "https://bigdave7.github.io/coursera-test/module5.5/snippets/category-snippet.html";
     var menuItemsUrl = "https://coursera-jhu-default-rtdb.firebaseio.com/menu_items/";
-    var menuItemsTitleHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/menu-item-title.html";
-    var menuItemHtml = "https://bigdave7.github.io/coursera-test/module5/snippets/menu-item.html";
+    var menuItemsTitleHtml = "https://bigdave7.github.io/coursera-test/module5.5/snippets/menu-item-title.html";
+    var menuItemHtml = "https://bigdave7.github.io/coursera-test/module5.5/snippets/menu-item.html";
 
     var insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
@@ -76,10 +76,10 @@ $(function () {
         // Load home snippet page
         $.get(homeHtml, function (homeHtml) {
             var chosenCategoryShortName = chooseRandomCategory(categories);
-            var homeHtmlToInsertIntoMainPage = "'" + chosenCategoryShortName + "'";
+            var homeHtmlToInsertIntoMainPage = "'" + chosenCategoryShortName.short_name + "'";
             homeHtml = insertProperty(homeHtml, "randomCategoryShortName", homeHtmlToInsertIntoMainPage);
             insertHtml("#main-content", homeHtml);
-    
+            
             // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
             // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
             // variable's name implies it expects.
